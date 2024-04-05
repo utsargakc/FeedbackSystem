@@ -1,0 +1,67 @@
+﻿@page
+@model RegisterModel
+
+<form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div class="row">
+        <div id="1" class="col-md-6">
+                <h2>Create a new account.</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.UserName">Username</label>
+                    <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password">Password</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+        </div>
+        <div id="2" class="border col-md-6 p-3 mb-3">
+                <h4>Security Questions for password recovery</h4>
+                <hr />
+                <div class="mb-3">
+                    <label asp-for="Input.SecurityQn1">Security Question 1</label>
+                    <input asp-for="Input.SecurityQn1" class="form-control" aria-required="true" required/>
+                    <span asp-validation-for="Input.SecurityQn1" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Input.SecurityAns1">Security Answer 1</label>
+                    <input asp-for="Input.SecurityAns1" class="form-control" aria-required="true" required/>
+                    <span asp-validation-for="Input.SecurityAns1" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Input.SecurityQn2">Security Question 2</label>
+                    <input asp-for="Input.SecurityQn2" class="form-control" aria-required="true" required/>
+                    <span asp-validation-for="Input.SecurityQn2" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Input.SecurityAns2">Security Answer 2</label>
+                    <input asp-for="Input.SecurityAns2" class="form-control" aria-required="true" required/>
+                    <span asp-validation-for="Input.SecurityAns2" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Input.SecurityQn3">Security Question 3</label>
+                    <input asp-for="Input.SecurityQn3" class="form-control" aria-required="true" required/>
+                    <span asp-validation-for="Input.SecurityQn3" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Input.SecurityAns3">Security Answer 3</label>
+                    <input asp-for="Input.SecurityAns3" class="form-control" aria-required="true" required/>
+                    <span asp-validation-for="Input.SecurityAns3" class="text-danger"></span>
+                </div>
+        </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-primary">Register</button>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

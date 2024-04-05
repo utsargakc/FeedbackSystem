@@ -1,0 +1,42 @@
+﻿@model AuthWeb.Data.Topics
+<partial name="_Notification" />
+<br />
+<form method="post">
+    <div class="p-3 mt-4" style="background-color: #454442">
+        <div class="row pb-2">
+            <h2>Add Topic</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <label class="p-0">Topic:</label>
+            <input asp-for="Topic" type="text" class="form-control" required/>
+            <span asp-validation-for="Topic" class="text-danger"></span>
+        </div>
+        <div>
+            <label>Select status:</label><br>
+            <input asp-for="Status" type="radio" id="statusActive" name="status" value="Active">
+            <label for="statusActive">Active</label><br>
+            <input asp-for="Status" type="radio" id="statusInactive" name="status" value="Inactive">
+            <label for="statusInactive">Inactive</label><br>
+            <span asp-validation-for="Status" class="text-danger"></span>
+            <p></p>
+        </div>
+        <div>
+            <label>Enable Rating:</label><br>
+            <input asp-for="EnableRating" type="radio" id="EnableRating" name="EnableRating" value="Enable">
+            <label for="EnableRating">Enable</label><br>
+            <input asp-for="EnableRating" type="radio" id="DisableRating" name="EnableRating" value="Disable">
+            <label for="DisableRating">Disable</label><br>
+            <span asp-validation-for="EnableRating" class="text-danger"></span>
+            <p></p>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Submit</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a class="btn btn-secondary form-control" asp-area="" asp-controller="Feedback" asp-action="Topics">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>

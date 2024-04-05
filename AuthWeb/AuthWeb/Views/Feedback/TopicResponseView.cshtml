@@ -1,0 +1,51 @@
+﻿@model TopicsViewModel
+
+<partial name="_Notification" />
+<br />
+
+<h5>@Model.Topics.FirstOrDefault()?.Topic</h5>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Responses
+            </th>
+            <th>
+                Users
+            </th>
+            <th>
+                Received On
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var response in Model.Responses.OrderByDescending(r => r.CreatedOn))
+        {
+            <tr>
+                <td>
+                    @response.Response<br />
+                    @for (int i = 0; i < response.Rating; i++)
+                    {
+                        <i class="fas fa-star"></i>
+                    }
+                    @for (int? i = response.Rating; i < 5 && i != 0; i++)
+                    {
+                        <i class="fa-regular fa-star"></i>
+                    }
+                </td>
+                <td>
+                    @foreach (var user in Model.Users.Where(u => u.Id == response.UserId))
+                    {
+                        @user.UserName
+                    }
+                </td>
+                <td>
+                    @response.CreatedOn
+                </td>
+            </tr>
+        }
+    </tbody> 
+</table>
+
+<a class="btn btn-primary" asp-area="" asp-controller="Feedback" asp-action="AdminDashboard">Back to Dshboard</a>
+

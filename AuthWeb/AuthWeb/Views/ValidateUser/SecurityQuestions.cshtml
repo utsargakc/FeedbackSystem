@@ -1,0 +1,32 @@
+﻿<partial name="_Notification" />
+<html>
+    <form id="ValidateUser" method="post">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2>Password Recovery Questions</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <p> </p>
+            </div>
+            <div class="mb-3">
+                <label>@ViewData["SecurityQuestion1"]</label>
+            <input name="SecurityAns1" type="text" class="form-control" autocomplete="off" required />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>@ViewData["SecurityQuestion2"]</label>
+            <input name="SecurityAns2" type="text" class="form-control" autocomplete="off" required />
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>@ViewData["SecurityQuestion3"]</label>
+            <input name="SecurityAns3" type="text" class="form-control" autocomplete="off" required/>
+                <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Reset Password</button>
+        </div>
+    </form>
+</html>

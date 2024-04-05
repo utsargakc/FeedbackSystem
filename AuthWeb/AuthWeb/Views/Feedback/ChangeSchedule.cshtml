@@ -1,0 +1,229 @@
+﻿@model AuthWeb.Data.Topics
+
+<style>
+    #status-div,
+    #rating-div {
+        display: none;
+    }
+</style>
+
+<partial name="_Notification" />
+<br />
+<form method="post" action="/Feedback/ChangeSchedule">
+    <div class=" p-3 mt-4 mb-3" style="background-color: #454442">
+        <div class="row pb-2">
+            <h2>Schedule Topic</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <input asp-for="Id" type="hidden" name="Id" />
+            <input asp-for="Created_by" type="hidden" name="Created_by" />
+            <label for="Topic" class="p-0">Topic:</label>
+            <input asp-for="Topic" id="Topic" type="text" class="form-control" readonly=""/>
+            <span asp-validation-for="Topic" class="text-danger"></span>
+        </div>
+        <div id="status-div">
+            <label>Current Status:</label><br>
+            <input asp-for="Status" type="radio" id="statusActive" name="Status" value="Active">
+            <label for="statusActive">Active</label><br>
+            <input asp-for="Status" type="radio" id="statusInactive" name="Status" value="Inactive">
+            <label for="statusInactive">Inactive</label><br>
+            <p></p>
+        </div>
+        <div id="rating-div">
+            <label>Enable Rating:</label><br>
+            <input asp-for="EnableRating" type="radio" id="EnableRating" name="EnableRating" value="Enable">
+            <label for="EnableRating">Enable</label><br>
+            <input asp-for="EnableRating" type="radio" id="DisableRating" name="EnableRating" value="Disable">
+            <label for="DisableRating">Disable</label><br>
+            <span asp-validation-for="EnableRating" class="text-danger"></span>
+            <p></p>
+        </div>
+        <div>
+        </div>
+        @* <div>
+        <lable>Schedule:</lable><br />
+        <input type="radio" id="recurrence" name="recurrence" value="Minutely">
+        <label for="Minutely">Minutely</label><br>
+        <input type="radio" id="recurrence" name="recurrence" value="Every2minutes">
+        <label for="Every2minutes">Every 2 minutes</label><br>
+        </div> *@
+        <lable>Schedule:</lable><br />
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#repeat-modal">
+            Repeat
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="repeat-modal" tabindex="-1" role="dialog" aria-labelledby="repeat-modalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="repeat-modalLongTitle">Recurrence</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="color: #ffffff">
+                        <span>Repeat every</span>
+                        <input type="number" id="repeatingNumber" name="repeatingNumber" class="m-3" style="width: 50px" placeholder="1"  min="1" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" />
+
+                        <select name="recurrenceType" style="height: 30px" id="recurrenceType">
+                            <option value="">-- Select recurrence type --</option>
+                            <option value="daily">Day</option>
+                            <option value="weekly">Week</option>
+                            <option value="monthly">Month</option>
+                            <option value="yearly">Year</option>
+                        </select>
+                        <!-- For Days of the week-->
+                        <div id="day-selection" style="display: none;">
+                            <span>On</span><br />
+                            <input type="checkbox" id="sunday" name="selectedDays" value="0">
+                            <label for="sunday">Sun</label>
+
+                            <input type="checkbox" id="monday" name="selectedDays" value="1">
+                            <label for="monday">Mon</label>
+
+                            <input type="checkbox" id="tuesday" name="selectedDays" value="2">
+                            <label for="tuesday">Tue</label>
+
+                            <input type="checkbox" id="wednesday" name="selectedDays" value="3">
+                            <label for="wednesday">Wed</label>
+
+                            <input type="checkbox" id="thursday" name="selectedDays" value="4">
+                            <label for="thursday">Thu</label>
+
+                            <input type="checkbox" id="friday" name="selectedDays" value="5">
+                            <label for="friday">Fri</label>
+
+                            <input type="checkbox" id="saturday" name="selectedDays" value="6">
+                            <label for="saturday">Sat</label>
+                        </div>
+                        <!--For days of the month-->
+                        <div id="monthly-selection" style="display: none;">
+                            <span>Day of the month:</span>
+                            <input type="number" id="dayOfMonth" name="dayOfMonth" min="1" max="31" onkeydown="return event.keyCode !== 69 && event.keyCode !== 189" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#custom-period-modal">
+            Custom Period
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="custom-period-modal" tabindex="-1" role="dialog" aria-labelledby="custom-period-modalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="custom-period-modalLongTitle">Custom Period</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 row p-1">
+                            <br />
+                            <label class="p-0">Start Date:</label>
+                            <input asp-for="startDate" type="date" class="form-control" id="startDatePicker" placeholder="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                            <span asp-validation-for="startDate" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3 row p-1">
+                            <label class="p-0">End Date:</label>
+                            <input asp-for="endDate" type="date" class="form-control" id="endDatePicker" placeholder="@DateTime.Now.ToString("yyyy-MM-dd")" required />
+                            <span asp-validation-for="endDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-md-3">
+            <button type="submit" class="btn btn-primary form-control save-schedule">Update Schedule</button>
+
+        </div>
+        <div class="col-6 col-md-3">
+            <a class="btn btn-secondary form-control" asp-area="" asp-controller="Feedback" asp-action="Topics">Back to List</a>
+        </div>
+    </div>
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('form').off('submit');
+        var formSubmitted = false;
+        $('#recurrenceType').change(function () {
+            if ($(this).val() == 'weekly') {
+                $('#day-selection').show();
+                $('#monthly-selection').hide();
+            } else if ($(this).val() == 'monthly') {
+                $('#day-selection').hide();
+                $('#monthly-selection').show();
+            } else {
+                $('#day-selection').hide();
+                $('#monthly-selection').hide();
+            }
+        });
+        $('form').submit(function (event) {
+            event.stopPropagation();
+            if (formSubmitted) {
+                event.preventDefault();
+                return;
+            }
+            formSubmitted = true;
+            var repeatingNumber = $('#repeatingNumber').val();
+            var recurrenceType = $('#recurrenceType').val();
+            var selectedDays = [];
+
+            $('input[name="selectedDays"]').each(function () {
+                if ($(this).is(':checked')) {
+                    selectedDays.push($(this).val());
+                }
+            });
+            console.log(selectedDays);
+            var dayOfMonth = $('#dayOfMonth').val();
+
+            var requestData = {
+                Id: $('#Id').val(),
+                Created_by: $('#Created_by').val(),
+                Topic: $('#Topic').val(),
+                Status: $('input[name="Status"]:checked').val(),
+                startDate: $('#startDatePicker').val(),
+                endDate: $('#endDatePicker').val(),
+                repeatingNumber: repeatingNumber,
+                recurrenceType: recurrenceType,
+                dayOfMonth: dayOfMonth,
+                selectedDays: selectedDays.join(',')
+            };
+            console.log(requestData);
+
+            $.ajax({
+                url: '/Feedback/ChangeSchedule',
+                method: 'POST',
+                data: requestData,
+                traditional: true,
+                success: function (response) {
+
+                },
+                error: function (xhr, status, error) {
+
+                }
+            });
+        });
+    });
+</script>

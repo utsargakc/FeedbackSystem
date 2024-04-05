@@ -1,0 +1,182 @@
+﻿@model TopicsViewModel
+
+<partial name="_Notification" />
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Topics
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var topic in Model.Topics)
+                    {
+                        <tr>
+                            <td>
+                                @if (topic.Topic.Length > 50)
+                                {
+                                    <div class="response-container">
+                                        <span class="visible-part">
+                                            <button type="button" class="btn show-response-btn" data-topic-id="@topic.Id">
+                                                @topic.Topic.Substring(0, 50)
+                                            </button>
+                                        </span>
+                                        <span class="hidden-part" style="display:none;">
+                                            <button type="button" class="btn show-response-btn" data-topic-id="@topic.Id">
+                                                @topic.Topic
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <button type="button" class="btn btn-link read-more-btn">Read More</button>
+                                }
+                                else
+                                {
+                                    <button type="button" class="btn show-response-btn" data-topic-id="@topic.Id">
+                                        @topic.Topic
+                                    </button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6 p-2" style="background-color: #444342">
+            
+            <div id="responses-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Topic Details:
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@foreach (var topic in Model.Topics)
+{
+    <div id="response-@topic.Id" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Topic Details:
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <h6 style="color: #e27b13">@topic.Topic</h6>
+        Status: @topic.Status
+        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Responses
+                    </th>
+                    <th>
+                        Users
+                    </th>
+                    <th>
+                        Received On
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Responses != null)
+                {
+                    foreach (var response in Model.Responses.Where(r => r.TopicId == topic.Id).OrderByDescending(r => r.CreatedOn))
+                    {
+                        <tr>
+                            <td>
+                                @if (response.Response.Length > 100)
+                                {
+                                    <div class="response-container">
+                                        <span class="visible-part">@response.Response.Substring(0, 50)</span>
+                                        <span class="hidden-part" style="display:none;">@response.Response</span>  
+                                    </div>
+                                    <button type="button" class="btn btn-link read-more-btn">Read More</button><br />
+                                    @for (int i = 0; i < response.Rating; i++)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    @for (int? i = response.Rating; i < 5 && i != 0; i++)
+                                    {
+                                        <i class="fa-regular fa-star"></i>
+                                    }
+                                }
+                                else
+                                {
+                                    @response.Response<br />
+                                    for (int i = 0; i < response.Rating; i++)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    for (int? i = response.Rating; i < 5 && i != 0; i++)
+                                    {
+                                        <i class="fa-regular fa-star"></i>
+                                    }
+                                }
+                            </td>
+                            <td>
+                                @foreach (var user in Model.Users.Where(u => u.Id == response.UserId))
+                                {
+                                    @user.UserName
+                                }
+                            </td>
+                            <td>
+                                @response.CreatedOn
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            No responses for this topic.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        console.log('document is ready');
+        $('.show-response-btn').click(function () {
+            var topicId = $(this).data('topic-id');
+            var responses = $('#response-' + topicId).html();
+            $('#responses-container').html(responses);
+        });
+
+        $(document).on('click', '.read-more-btn', function () {
+            console.log('Button clicked');
+
+            var container = $(this).siblings('.response-container');
+            container.find('.visible-part, .hidden-part').toggle();
+
+            var hiddenPart = container.find('.hidden-part');
+            if (hiddenPart.is(':visible')) {
+                $(this).text('Read Less');
+            } else {
+                $(this).text('Read More');
+            }
+        });
+    });
+</script>

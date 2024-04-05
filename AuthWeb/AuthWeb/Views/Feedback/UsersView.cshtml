@@ -1,0 +1,213 @@
+﻿@model TopicsViewModel
+
+<partial name="_Notification" />
+<div class="row">
+    <h2>Users</h2>   
+    <table class="table table-bordered table-striped shadow">
+        <thead>
+            <tr>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    User ID
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#users-modal-@user.Id">
+                            @user.UserName
+                        </button>
+                    </td>
+                    <td>
+                        @user.Id
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!--Users' Detail Modal-->
+@foreach (var user in Model.Users)
+{
+    <div class="modal fade" id="users-modal-@user.Id" tabindex="-1" role="dialog" aria-labelledby="custom-period-modalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="custom-period-modalLongTitle">@user.UserName</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6>User's responses:</h6>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Reponses
+                                </th>
+                                <th>
+                                    Topics
+                                </th>
+                                <th>
+                                    Given On
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Responses != null)
+                            {
+                                foreach (var response in Model.Responses.Where(r => r.UserId == user.Id).OrderByDescending(r => r.CreatedOn))
+                                {
+                                    <tr>
+                                        <td>
+                                            @if (response.Response.Length > 100)
+                                            {
+                                                <div class="response-container">
+                                                    <span class="visible-part">@response.Response.Substring(0, 50)</span>
+                                                    <span class="hidden-part" style="display:none;">@response.Response</span>
+                                                </div>
+                                                <button type="button" class="btn btn-link read-more-btn">Read More</button><br />
+                                                @for (int i = 0; i < response.Rating; i++)
+                                                {
+                                                    <i class="fas fa-star"></i>
+                                                }
+                                                @for (int? i = response.Rating; i < 5 && i != 0; i++)
+                                                {
+                                                    <i class="fa-regular fa-star"></i>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                @response.Response<br />
+                                                for (int i = 0; i < response.Rating; i++)
+                                                {
+                                                    <i class="fas fa-star"></i>
+                                                }
+                                                for (int? i = response.Rating; i < 5 && i != 0; i++)
+                                                {
+                                                    <i class="fa-regular fa-star"></i>
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @foreach (var topic in Model.Topics.Where(t => t.Id == response.TopicId))
+                                            {
+                                                if (topic.Topic.Length > 50)
+                                                {
+                                                    <div class="response-container">
+                                                        <span class="visible-part">@topic.Topic.Substring(0, 50)</span>
+                                                        <span class="hidden-part" style="display:none;">@topic.Topic</span>
+                                                    </div>
+                                                    <button type="button" class="btn btn-link read-more-btn">Read More</button>
+                                                }
+                                                else
+                                                {
+                                                    @topic.Topic
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @response.CreatedOn
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>
+                                        No responses for this topic.
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <h6>User's suggestions:</h6>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Suggestions
+                                </th>
+                                <th>
+                                    Submitted On
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if(Model.AdditionalFeedbacks != null)
+                            {
+                                @foreach (var feedback in Model.AdditionalFeedbacks.Where(f => f.UserId == user.Id).OrderByDescending(f => f.SubmittedOn))
+                                {
+                                    <tr>
+                                        <td>
+                                            @if (feedback.Feedback.Length > 100)
+                                            {
+                                                <div class="response-container">
+                                                    <span class="visible-part">@feedback.Feedback.Substring(0, 100)</span>
+                                                    <span class="hidden-part" style="display:none;">@feedback.Feedback</span>
+                                                </div>
+                                                <button type="button" class="btn btn-link read-more-btn">Read More</button>
+                                            }
+                                            else
+                                            {
+                                                @feedback.Feedback
+                                            }
+                                        </td>
+                                        <td>
+                                            @feedback.SubmittedOn
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>
+                                        User has no feedbacks.
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('.read-more-btn').click(function () {
+            console.log('Button clicked');
+
+            var container = $(this).prev('.response-container');
+            container.find('.visible-part, .hidden-part').toggle();
+
+            var hiddenPart = container.find('.hidden-part');
+            if (hiddenPart.is(':visible')) {
+                $(this).text('Read Less');
+            } else {
+                $(this).text('Read More');
+            }
+        });
+    });
+</script>
