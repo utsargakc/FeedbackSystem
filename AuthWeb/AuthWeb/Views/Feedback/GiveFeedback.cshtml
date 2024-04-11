@@ -1,7 +1,7 @@
 ﻿@model TopicsViewModel
 <h2 class="mt-3 mb-2">Feedback Topics</h2>
 <partial name="_Notification" />
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css" integrity="sha512-vEia6TQGr3FqC6h55/NdU3QSM5XR6HSl5fW71QTKrgeER98LIMGwymBVM867C1XHIkYD9nMTfWK2A0xcodKHNA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
     .feedback-topics{
         background-color: #75726f;
@@ -11,7 +11,6 @@
         cursor: pointer;
     }
 </style>
-
 <form method="post">
     <div class="feedback-topics mb-2">
         <ul class="list-group">
@@ -20,7 +19,7 @@
                 <li class="list-group-item">
                     <div>
                         <span>@topic.Topic</span>
-                        <textarea id="response-topic-@topic.Id" name="responses[@topic.Id]" class="mt-2 mb-2 form-control" rows="4" cols="126" ></textarea>
+                        <textarea id="response-topic-@topic.Id" name="responses[@topic.Id]" class="mt-2 mb-2 form-control" rows="4" cols="126"></textarea>
                         <div onmouseout="SelectedRating(@topic.Id)">
                             @if (topic.EnableRating == "Enable")
                             {
@@ -39,25 +38,27 @@
     </div>
     <button type="submit" class="btn btn-primary" style="width:150px">Submit</button>
 </form>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js" integrity="sha512-ZuxZDe3rBE+OMV5ki0VZC2MSCp6NaoTiDHvYenVag+L/Agxb+MMKHZqVNXFXYX/ruuRofd5setKzyCupZCURvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    $(document).ready(function () {
-        $('.list-group-item textarea').hide();
-        $('.list-group-item i').hide();
+    $(document).ready(function ($) {
+        // $('.list-group-item textarea').emojioneArea({
+        //     pickerPosition: 'bottom'
+        // });
+        $('.list-group-item textarea, .list-group-item i').hide();
 
         $('.list-group-item').click(function (event) {
             var inputField = $(this).find('textarea');
             var ratingStars = $(this).find('i');
+
             inputField.toggle();
             ratingStars.toggle();
+            
             event.stopPropagation();
         });
 
-        $('.list-group-item textarea').click(function (event) {
-            event.stopPropagation();
-        });
-
-        $('.list-group-item i').click(function (event) {
+        $('.list-group-item textarea, .list-group-item i').click(function (event) {
             event.stopPropagation();
         });
 

@@ -2432,3 +2432,4 @@ C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\
 C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\obj\Debug\net8.0\ref\AuthWeb.dll
 C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\obj\Debug\net8.0\AuthWeb.sourcelink.json

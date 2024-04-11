@@ -1,0 +1,93 @@
+﻿@model TopicsViewModel
+
+<partial name="_Notification" />
+<br />
+<div class="mb-2 p-3" style="color: #454442">
+    <h5 style="color: #454442"><i class="bi bi-person-fill"></i>&nbsp;@Model.Users.FirstOrDefault()?.UserName</h5>
+    Total responses: @Model.Responses.Count() &nbsp; &nbsp; | &nbsp; &nbsp;
+    Total suggestions: @Model.AdditionalFeedbacks.Count()
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Responses
+            </th>
+            <th>
+                Received On
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var response in Model.Responses.OrderByDescending(r => r.CreatedOn))
+        {
+            <tr>
+                <td>
+                    @if (response.Response.Length > 100)
+                    {
+                        <div class="response-container">
+                            <span class="visible-part">
+                                @response.Response.Substring(0, 100)
+                            </span>
+                            <span class="hidden-part" style="display:none;">
+                                @response.Response
+
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-link read-more-btn">Read More</button>
+
+                        <br />
+                        @for (int i = 0; i < response.Rating; i++)
+                        {
+                            <i class="fas fa-star"></i>
+                        }
+                        @for (int? i = response.Rating; i < 5 && i != 0; i++)
+                        {
+                            <i class="fa-regular fa-star"></i>
+                        }
+                    }
+                    else
+                    {
+                        @response.Response
+
+                        <br />
+                        for (int i = 0; i < response.Rating; i++)
+                        {
+                            <i class="fas fa-star"></i>
+                        }
+                        for (int? i = response.Rating; i < 5 && i != 0; i++)
+                        {
+                            <i class="fa-regular fa-star"></i>
+                        }
+                    }
+                </td>
+                <td>
+                    @response.CreatedOn
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-area="" asp-controller="Feedback" asp-action="UsersView">Back to Users List</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('.read-more-btn').click(function () {
+            console.log('Button clicked');
+
+            var container = $(this).prev('.response-container');
+            container.find('.visible-part, .hidden-part').toggle();
+
+            var hiddenPart = container.find('.hidden-part');
+            if (hiddenPart.is(':visible')) {
+                $(this).text('Read Less');
+            } else {
+                $(this).text('Read More');
+            }
+        });
+    });
+</script>

@@ -1,6 +1,7 @@
 ﻿using AuthWeb.Data;
 using AuthWeb.Models;
 using AuthWeb.Services;
+using Azure;
 using Hangfire;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -23,6 +24,8 @@ namespace AuthWeb.Controllers
             _userManager = userManager;
             _logger = logger;
         }
+
+        //Admin COntroller methods
 
         [Authorize(Roles = "Admin")]
         public IActionResult Topics()
@@ -73,6 +76,7 @@ namespace AuthWeb.Controllers
             var model = new TopicsViewModel { Topics = topics, AdditionalFeedbacks = feedbacks, Users = users };
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult TopicResponseView(int id)
         {
             if (id == null || id == 0)
@@ -95,6 +99,39 @@ namespace AuthWeb.Controllers
             return View(viewModel);
         }
 
+        public IActionResult UserResponseView(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            IEnumerable<ApplicationUser> userFromDb = _db.Users.Where(t => t.Id == id);
+            IEnumerable<Responses> responsesForTopic = _db.responses.Where(r => r.UserId == id);
+            IEnumerable<AdditionalFeedback> feedbacks = _db.additionalfeedbacks.Where(f => f.UserId == id);
+            var users = _userManager.Users.ToList();
+
+            TopicsViewModel viewModel = new TopicsViewModel
+            {
+                Users = userFromDb,
+                Responses = responsesForTopic,
+                AdditionalFeedbacks = feedbacks
+            };
+
+            return View(viewModel);
+        }
+
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> UsersView()
+        {
+            var topics = _db.topics.ToList();
+            var responses = _db.responses.ToList();
+            var usersInrole = await _userManager.GetUsersInRoleAsync("User");
+            var users = usersInrole.ToList();
+            var feedbacks = _db.additionalfeedbacks.ToList();
+            var model = new TopicsViewModel { Topics = topics, Responses = responses, Users = users, AdditionalFeedbacks = feedbacks };
+            return View(model);
+        }
 
 
         [Authorize(Roles = "Admin")]
@@ -120,7 +157,7 @@ namespace AuthWeb.Controllers
             TempData["success"] = "Topic added sucessfully!!";
             return RedirectToAction("Topics");
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult EditTopics(int id)
         {
             if (id == null || id == 0)
@@ -155,6 +192,7 @@ namespace AuthWeb.Controllers
             return RedirectToAction("Topics");
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult DeleteTopics(int id)
         {
             if (id == null || id == 0)
@@ -171,17 +209,6 @@ namespace AuthWeb.Controllers
             return View(TopicfromDb);
         }
 
-        //Admin Users View
-        public async Task<IActionResult> UsersView()
-        {
-            var topics = _db.topics.ToList();
-            var responses = _db.responses.ToList();
-            var usersInrole = await _userManager.GetUsersInRoleAsync("User");
-            var users = usersInrole.ToList();
-            var feedbacks = _db.additionalfeedbacks.ToList();
-            var model = new TopicsViewModel { Topics = topics, Responses = responses, Users = users, AdditionalFeedbacks = feedbacks };
-            return View(model);
-        }
 
         [HttpPost]
         public IActionResult DeleteTopics(int? id)
@@ -379,6 +406,9 @@ namespace AuthWeb.Controllers
             _db.SaveChanges();
         }
 
+
+
+        //Users Controller methods
         //Feedback
         public IActionResult GiveFeedback()
         {
@@ -423,20 +453,6 @@ namespace AuthWeb.Controllers
                 _db.SaveChanges();
                 TempData["success"] = "Thank you for your feedback!";
             }
-
-
-            var data = new AdditionalFeedback()
-            {
-                Feedback = obj.Feedback,
-                SubmittedOn = DateTime.Now,
-                UserId = currentUser.Id
-            };
-            if (data.Feedback != null) 
-            { 
-                _db.additionalfeedbacks.Add(data);
-                _db.SaveChanges();
-                TempData["success"] = "Thank you for your feedback!";
-            }
             
             var topics = _db.topics.ToList();
             var model = new GiveFeedbackViewModel { Topics = topics };
@@ -465,6 +481,71 @@ namespace AuthWeb.Controllers
                 TempData["success"] = "Thank you for your feedback!";
             }
             return View();
+        }
+
+        public IActionResult MyResponses()
+        {
+            var currentUser = _userManager.GetUserAsync(User).Result;
+            var topics = _db.topics.ToList();
+            var responses = _db.responses.Where(r => r.UserId == currentUser.Id).ToList();
+            var users = _userManager.Users.ToList();
+            var model = new TopicsViewModel { Topics = topics, Responses = responses, Users = users };
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult MyResponses(string a)
+        {
+            var currentUser = _userManager.GetUserAsync(User).Result;
+            int responseID = int.Parse(Request.Form["responseID"]);
+            string response = Request.Form["response"];
+
+            var existingResponse = _db.responses.FirstOrDefault(r => r.Id == responseID);
+            if (existingResponse != null)
+            {
+                existingResponse.Response = response;
+                existingResponse.isEdited = "True";
+                _db.responses.Update(existingResponse);
+                _db.SaveChanges();
+                TempData["success"] = "Response edited successfully!";
+            }
+            else
+            {
+                TempData["faliure"] = "Response not found!";
+            }
+            return RedirectToAction("MyResponses");
+        }
+
+        public IActionResult MySuggestions()
+        {
+            var currentUser = _userManager.GetUserAsync(User).Result;
+            var topics = _db.topics.ToList();
+            var feedbacks = _db.additionalfeedbacks.Where(f => f.UserId == currentUser.Id).ToList();
+            var users = _userManager.Users.ToList();
+            var model = new TopicsViewModel { Topics = topics, AdditionalFeedbacks = feedbacks, Users = users };
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult MySuggestions(string a)
+        {
+            var currentUser = _userManager.GetUserAsync(User).Result;
+            int feedbackID = int.Parse(Request.Form["feedbackID"]);
+            string feedback = Request.Form["feedback"];
+
+            var existingFeedback = _db.additionalfeedbacks.FirstOrDefault(f => f.Id == feedbackID);
+            if (existingFeedback != null)
+            {
+                existingFeedback.Feedback = feedback;
+                existingFeedback.isEdited = "True";
+                _db.additionalfeedbacks.Update(existingFeedback);
+                _db.SaveChanges();
+                TempData["success"] = "Suggestion edited successfully!";
+            }
+            else
+            {
+                TempData["faliure"] = "Suggestion not found!";
+            }
+            return RedirectToAction("MySuggestions");
         }
     }
 }

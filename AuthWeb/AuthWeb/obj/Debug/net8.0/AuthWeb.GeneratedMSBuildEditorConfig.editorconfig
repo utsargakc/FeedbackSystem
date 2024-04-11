@@ -17,183 +17,195 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AuthWeb
 build_property.RootNamespace = AuthWeb
-build_property.ProjectDir = C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\
+build_property.ProjectDir = C:\Users\utsarga_teksewa\Documents\upload\AuthWeb\AuthWeb\AuthWeb\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\utsarga_teksewa\Documents\Demo\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb\AuthWeb
+build_property.MSBuildProjectDirectory = C:\Users\utsarga_teksewa\Documents\upload\AuthWeb\AuthWeb\AuthWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGlzYWJsZTJmYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/Email.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/Email.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcU2V0UGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ValidateUser.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/ValidateUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxWYWxpZGF0ZVVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/AdditionalFeedback.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/AdditionalFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcQWRkaXRpb25hbEZlZWRiYWNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/AddTopics.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/AddTopics.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcQWRkVG9waWNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/AdminDashboard.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/ChangeSchedule.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/ChangeSchedule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcQ2hhbmdlU2NoZWR1bGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/DeleteTopics.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/DeleteTopics.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcRGVsZXRlVG9waWNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/EditTopics.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/EditTopics.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcRWRpdFRvcGljcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/FeedbackInbox.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/FeedbackInbox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcRmVlZGJhY2tJbmJveC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/GiveFeedback.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/GiveFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcR2l2ZUZlZWRiYWNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/SuggestionInbox.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/MyResponses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcTXlSZXNwb25zZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/MySuggestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcTXlTdWdnZXN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/SuggestionInbox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcU3VnZ2VzdGlvbkluYm94LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/TopicResponseView.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/TopicResponseView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcVG9waWNSZXNwb25zZVZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/Topics.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/Topics.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcVG9waWNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/TopicsDetailedView.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/TopicsDetailedView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcVG9waWNzRGV0YWlsZWRWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/UsersView.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/UserResponseView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcVXNlclJlc3BvbnNlVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Feedback/UsersView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlZGJhY2tcVXNlcnNWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Home/Index.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Home/Privacy.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Shared/Error.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_Notification.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_Notification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/ValidateUser/ChangePassword.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/ValidateUser/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFsaWRhdGVVc2VyXENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/ValidateUser/SecurityQuestions.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/ValidateUser/SecurityQuestions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmFsaWRhdGVVc2VyXFNlY3VyaXR5UXVlc3Rpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/_ViewImports.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/_ViewStart.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/utsarga_teksewa/Documents/Demo/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_Layout.cshtml]
+[C:/Users/utsarga_teksewa/Documents/upload/AuthWeb/AuthWeb/AuthWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gjizrhgbvp

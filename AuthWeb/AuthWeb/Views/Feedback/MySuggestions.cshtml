@@ -1,0 +1,107 @@
+﻿@model TopicsViewModel
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css" integrity="sha512-vEia6TQGr3FqC6h55/NdU3QSM5XR6HSl5fW71QTKrgeER98LIMGwymBVM867C1XHIkYD9nMTfWK2A0xcodKHNA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<partial name="_Notification" />
+<div class="container">
+    <div class="row pt-4 pb-2">
+        <div class="col-6">
+            <h2>
+                User Suggestions
+            </h2>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped shadow">
+
+        <tbody>
+            @foreach (var feedback in Model.AdditionalFeedbacks.OrderByDescending(f => f.SubmittedOn))
+            {
+                <tr>
+                    <td>
+                        <i class="bi bi-person-fill" style="font-size: 22px;"></i>&nbsp;
+                        @foreach (var user in Model.Users.Where(u => u.Id == feedback.UserId))
+                        {
+                            <span class="user-name">@user.UserName</span>
+
+                            <br />
+                        }
+                        @if (feedback.Feedback.Length > 150)
+                        {
+                            <div class="response-container">
+                                <span class="visible-part">
+                                    @feedback.Feedback.Substring(0, 120)
+
+                                </span>
+                                <span class="hidden-part" style="display:none;">
+                                    @feedback.Feedback
+
+                                </span>
+                            </div>
+                            <button type="button" class="btn btn-link read-more-btn">Read More</button>
+                        }
+                        else
+                        {
+                            @feedback.Feedback
+                        }
+                    </td>
+                    <td>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#feedback-edit-modal-@feedback.Id">
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                    </td>
+                    <td class="text-right">
+                        @feedback.SubmittedOn
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@foreach (var feedback in Model.AdditionalFeedbacks)
+{
+    <div class="modal fade" id="feedback-edit-modal-@feedback.Id" tabindex="-1" role="dialog" aria-labelledby="custom-period-modalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Edit Suggestion</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>  
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        <input type="hidden" name="feedbackID" value="@feedback.Id" />
+                        <textarea name="feedback" rows="4" cols="60">@feedback.Feedback</textarea><br />
+                        <button type="submit" class="btn btn-success">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js" integrity="sha512-ZuxZDe3rBE+OMV5ki0VZC2MSCp6NaoTiDHvYenVag+L/Agxb+MMKHZqVNXFXYX/ruuRofd5setKzyCupZCURvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    $(document).ready(function ($) {
+        $('textarea').emojioneArea({
+            pickerPosition: 'bottom'
+        });
+        $('.read-more-btn').click(function () {
+            console.log('Button clicked');
+
+            var container = $(this).prev('.response-container');
+            container.find('.visible-part, .hidden-part').toggle();
+
+            var hiddenPart = container.find('.hidden-part');
+            if (hiddenPart.is(':visible')) {
+                $(this).text('Read Less');
+            } else {
+                $(this).text('Read More');
+            }
+        });
+    });
+</script>

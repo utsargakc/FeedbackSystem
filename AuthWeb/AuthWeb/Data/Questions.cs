@@ -45,6 +45,7 @@ namespace AuthWeb.Data
         public int Rating { get; set; }
         public DateTime CreatedOn { get; set; }
         public int TopicId { get; set; }
+        public string isEdited { get; set; } = "False";
 
         [ForeignKey("TopicId")]
         public virtual Topics Topic { get; set; }
@@ -63,6 +64,7 @@ namespace AuthWeb.Data
         [Required]
         public string Feedback { get; set; }
         public DateTime SubmittedOn { get; set; }
+        public string isEdited { get; set; } = "False";
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }

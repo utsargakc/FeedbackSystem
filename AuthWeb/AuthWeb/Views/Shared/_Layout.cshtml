@@ -59,7 +59,19 @@
                         @if (User.IsInRole("User"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link " asp-area="" asp-controller="Feedback" asp-action="AdditionalFeedback">Your Suggestions</a>
+                                <a class="nav-link " asp-area="" asp-controller="Feedback" asp-action="AdditionalFeedback">Suggestions</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Feedback" asp-action="MyResponses">My Responses</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Feedback" asp-action="MySuggestions">My Suggestions</a>
                             </li>
                         }
                     </ul>
