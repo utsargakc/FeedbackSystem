@@ -106,6 +106,7 @@ namespace AuthWeb.Controllers
                 return NotFound();
             }
 
+            var topics = _db.topics.ToList();
             IEnumerable<ApplicationUser> userFromDb = _db.Users.Where(t => t.Id == id);
             IEnumerable<Responses> responsesForTopic = _db.responses.Where(r => r.UserId == id);
             IEnumerable<AdditionalFeedback> feedbacks = _db.additionalfeedbacks.Where(f => f.UserId == id);
@@ -115,7 +116,8 @@ namespace AuthWeb.Controllers
             {
                 Users = userFromDb,
                 Responses = responsesForTopic,
-                AdditionalFeedbacks = feedbacks
+                AdditionalFeedbacks = feedbacks,
+                Topics = topics
             };
 
             return View(viewModel);

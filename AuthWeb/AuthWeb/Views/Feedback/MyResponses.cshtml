@@ -55,25 +55,33 @@
                     <td style="position: relative;">
                         @if (response.Response.Length > 100)
                         {
-                            <div class="response-container">
-                                <span class="visible-part">@response.Response.Substring(0, 50)</span>
-                                <span class="hidden-part" style="display:none;">@response.Response</span>
-                                @if (response.isEdited == "True")
-                                {
-                                    <span>(edited)</span>
-                                }
-                            </div>
-                            <button type="button" class="btn btn-link read-more-btn">Read More</button>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="response-container">
+                                        <span class="visible-part">@response.Response.Substring(0, 50)</span>
+                                        <span class="hidden-part" style="display:none;">@response.Response</span>
+                                    </div>
+                                    <button type="button" class="btn btn-link read-more-btn">Read More</button>
 
-                            <br />
-                            for (int i = 0; i < response.Rating; i++)
-                            {
-                                <i class="fas fa-star"></i>
-                            }
-                            for (int? i = response.Rating; i < 5 && i != 0; i++)
-                            {
-                                <i class="fa-regular fa-star"></i>
-                            }
+                                    <br />
+                                    @for (int i = 0; i < response.Rating; i++)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    @for (int? i = response.Rating; i < 5 && i != 0; i++)
+                                    {
+                                        <i class="fa-regular fa-star"></i>
+                                    }
+                                </div>
+                                <div class="col-2 text-end">
+                                    @if (response.isEdited == "True")
+                                    {
+                                        <div class="text-end">
+                                            <span style="color: #f19539;">(edited)</span>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
                         }
                         else
                         {
@@ -98,9 +106,7 @@
                                         </div>
                                     }
                                 </div>
-                            </div>
-                            
-                            
+                            </div> 
                         }
                     </td>
                     <td>

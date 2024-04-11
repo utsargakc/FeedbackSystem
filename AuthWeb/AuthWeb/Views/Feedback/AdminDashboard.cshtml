@@ -21,8 +21,7 @@
             {
                 <div class="col-md-4 users-div align-content-around" style="background-color: #444342; margin-right: 0px">
                     <button type="button" class="btn" data-toggle="modal" data-target="#top-users-modal-@user.Id">
-                        <i class="bi bi-person-fill" ></i>&nbsp;@user.UserName
-                        
+                        <i class="bi bi-person-fill" ></i>&nbsp;@user.UserName 
                     </button><br />
                     &nbsp;&nbsp;&nbsp;<span style="color: #e27b13;">@userGroup.Count() Responses &nbsp; | &nbsp;@Model.AdditionalFeedbacks.Count(f => f.UserId == user.Id) Suggestions</span>
                 </div>
@@ -184,14 +183,36 @@
                             @if (feedback.Feedback.Length > 100)
                             {
                                 <div class="response-container">
-                                    <span class="visible-part">@feedback.Feedback.Substring(0, 100)</span>
-                                    <span class="hidden-part" style="display:none;">@feedback.Feedback</span>
+                                    <span class="visible-part">
+                                        @feedback.Feedback.Substring(0, 100)
+                                    </span>
+                                    <span class="hidden-part" style="display:none;">
+                                        @feedback.Feedback
+                                    </span>
                                 </div>
                                 <button type="button" class="btn btn-link read-more-btn">Read More</button>
+                                @if (feedback.isEdited == "True")
+                                {
+                                    <div class="text-end">
+                                        <span style="color: #f19539;">(edited)</span>
+                                    </div>
+                                }
                             }
                             else
                             {
-                                @feedback.Feedback
+                                <div class="row">
+                                    <div class="col-6">
+                                        @feedback.Feedback
+                                    </div>
+                                    <div class="col-6">
+                                        @if (feedback.isEdited == "True")
+                                        {
+                                            <div class="text-end">
+                                                <span style="color: #f19539;">(edited)</span>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
                             }
                         </td>
                         <td>
